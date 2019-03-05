@@ -11,6 +11,7 @@ public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long supplierid;
+    private String suppliername;
     private int supplystock;
 
     @ManyToMany(cascade = CascadeType.ALL)
