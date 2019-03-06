@@ -23,4 +23,36 @@ public class Supplier {
 
     private Supplier(){
     }
+
+    public long getSupplierid() {
+        return supplierid;
+    }
+
+    public void setSupplierid(long supplierid) {
+        this.supplierid = supplierid;
+    }
+
+    public String getSuppliername() {
+        return suppliername;
+    }
+
+    public void setSuppliername(String suppliername) {
+        this.suppliername = suppliername;
+    }
+
+    public int getSupplystock() {
+        return supplystock;
+    }
+
+    public void setSupplystock(int supplystock) {
+        this.supplystock = supplystock;
+    }
+
+    public Set<Product> getProduct() {
+        return product;
+    }
+
+    public void setProduct(Set<Product> product) {
+        this.product = product;
+    }
 }

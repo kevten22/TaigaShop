@@ -16,4 +16,33 @@ public class Cart {
     @JsonIgnoreProperties("cart")
     private Set<CartItem> cartitems;
 
+    @OneToOne
+    private Order order;
+
+    public Cart() {
+    }
+
+    public long getCartid() {
+        return cartid;
+    }
+
+    public void setCartid(long cartid) {
+        this.cartid = cartid;
+    }
+
+    public Set<CartItem> getCartitems() {
+        return cartitems;
+    }
+
+    public void setCartitems(Set<CartItem> cartitems) {
+        this.cartitems = cartitems;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 }
