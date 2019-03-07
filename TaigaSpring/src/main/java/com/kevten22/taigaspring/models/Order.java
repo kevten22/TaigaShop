@@ -16,7 +16,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "shopperid")
     @JsonIgnoreProperties("orders")
-    private Shopper shopper;
+    private User user;
 
     @OneToOne
     private Cart cart;
@@ -43,12 +43,12 @@ public class Order {
         this.shippedstatus = shippedstatus;
     }
 
-    public Shopper getShopper() {
-        return shopper;
+    public User getUser() {
+        return user;
     }
 
-    public void setShopper(Shopper shopper) {
-        this.shopper = shopper;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public double getOrderTotal() {

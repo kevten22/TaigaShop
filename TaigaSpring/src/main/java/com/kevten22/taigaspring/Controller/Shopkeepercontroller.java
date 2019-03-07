@@ -82,9 +82,9 @@ public class Shopkeepercontroller {
         Optional<Order> updateOrder = orderrepos.findById(orderid);
         if (updateOrder.isPresent())
         {
-            if (neworder.getShopper() == null)
+            if (neworder.getUser() == null)
             {
-                neworder.setShopper(updateOrder.get().getShopper());
+                neworder.setUser(updateOrder.get().getUser());
             }
 
             if (neworder.getCart() == null)

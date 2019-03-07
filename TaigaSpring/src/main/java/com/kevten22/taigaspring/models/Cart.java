@@ -16,6 +16,10 @@ public class Cart {
     @JsonIgnoreProperties("cart")
     private Set<CartItem> cartitems;
 
+    @ManyToOne
+    @JsonIgnoreProperties("carts")
+    private User user;
+
     @OneToOne
     private Order order;
 
@@ -44,5 +48,13 @@ public class Cart {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

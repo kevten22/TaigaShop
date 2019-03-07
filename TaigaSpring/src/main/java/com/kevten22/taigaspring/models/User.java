@@ -2,14 +2,17 @@ package com.kevten22.taigaspring.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "shopper")
-public class Shopper {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long shopperid;
@@ -32,7 +35,7 @@ public class Shopper {
     @JsonIgnoreProperties("shopper")
     private Set<Order> orders = new HashSet<>();
 
-    public Shopper(){
+    public User(){
     }
 
     public long getShopperid() {
@@ -113,5 +116,10 @@ public class Shopper {
 
     public void setOrders(Set<Order> orders) {
         this.orders = orders;
+    }
+
+    public List<SimpleGrantedAuthority> getAuthority(){
+        String myRole = "ROLE_" + this.role.toUpperCase();
+        return Arrays.asList(new SimpleGrantedAuthority(myRole));
     }
 }

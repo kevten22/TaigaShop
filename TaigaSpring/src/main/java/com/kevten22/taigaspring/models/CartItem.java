@@ -17,6 +17,11 @@ public class CartItem {
     @JsonIgnoreProperties("cartiems")
     private Product product;
 
+    @ManyToOne
+    @JoinColumn(name = "cartid")
+    @JsonIgnoreProperties("cartitems")
+    private Cart cart;
+
     public CartItem() {
     }
 
