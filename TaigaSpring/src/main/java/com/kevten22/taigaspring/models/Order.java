@@ -14,7 +14,7 @@ public class Order {
     private Boolean shippedstatus;
 
     @ManyToOne
-    @JoinColumn(name = "shopperid")
+    @JoinColumn(name = "userid")
     @JsonIgnoreProperties("orders")
     private User user;
 

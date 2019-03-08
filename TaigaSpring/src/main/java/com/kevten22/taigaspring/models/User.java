@@ -27,12 +27,12 @@ public class User {
     private String phonenumber;
     private String paymentmethod;
 
-    @OneToMany(mappedBy = "shopper")
-    @JsonIgnoreProperties("shopper")
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties("user")
     private Set<Cart> carts = new HashSet<>();
 
-    @OneToMany(mappedBy = "shopper")
-    @JsonIgnoreProperties("shopper")
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties("user")
     private Set<Order> orders = new HashSet<>();
 
     public User(){
