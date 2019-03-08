@@ -28,11 +28,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
                 .antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN')")
                 .antMatchers("/users/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_SHOPKEEPER')")
-                .antMatchers("/products/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER', 'ROLE_SHOPKEEPER')")
-                .antMatchers("/suppliers/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER', 'ROLE_SHOPKEEPER')")
-                .antMatchers("/carts/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER', 'ROLE_SHOPKEEPER')")
-                .antMatchers("/cartiems/**").access("hasAnyRole('ROLE_USER','ROLE_SHOPKEEPER', 'ROLE_ADMIN')")
-                .antMatchers("/orders/**").access("hasAnyRole('ROLE_USER','ROLE_SHOPKEEPER', 'ROLE_ADMIN')")
+//                .antMatchers("/products/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER', 'ROLE_SHOPKEEPER')")
+//                .antMatchers("/suppliers/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER', 'ROLE_SHOPKEEPER')")
+//                .antMatchers("/carts/**").access("hasAnyRole('ROLE_ADMIN','ROLE_USER', 'ROLE_SHOPKEEPER')")
+//                .antMatchers("/cartiems/**").access("hasAnyRole('ROLE_USER','ROLE_SHOPKEEPER', 'ROLE_ADMIN')")
+//                .antMatchers("/orders/**").access("hasAnyRole('ROLE_USER','ROLE_SHOPKEEPER', 'ROLE_ADMIN')")
                 .antMatchers("/shopkeepers/**").access("hasAnyRole('ROLE_SHOPKEEPER')")
                 .and().exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
     }

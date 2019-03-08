@@ -3,6 +3,7 @@ package com.kevten22.taigaspring.Controller;
 import com.kevten22.taigaspring.models.Order;
 import com.kevten22.taigaspring.models.Product;
 import com.kevten22.taigaspring.models.Supplier;
+import com.kevten22.taigaspring.models.User;
 import com.kevten22.taigaspring.repository.Orderrepository;
 import com.kevten22.taigaspring.repository.Productrepository;
 import com.kevten22.taigaspring.repository.Supplierrepository;
@@ -22,8 +23,13 @@ public class Shopkeepercontroller {
     @Autowired
     Supplierrepository supplierrepos;
     @Autowired
-
     Orderrepository orderrepos;
+
+    @PostMapping("/user/")
+    public Product addNewProduct(@RequestBody Product newproduct) throws URISyntaxException {
+        return productrepos.save(newproduct);
+    }
+
     @PutMapping("/product/{productid}")
     public Product changeProductById(@RequestBody Product newproduct, @PathVariable long productid) throws URISyntaxException
     {

@@ -17,10 +17,12 @@ public class Cart {
     private Set<CartItem> cartitems;
 
     @ManyToOne
+    @JoinColumn(name = "userid")
     @JsonIgnoreProperties("carts")
     private User user;
 
     @OneToOne
+    @JoinColumn(name = "orderid")
     private Order order;
 
     public Cart() {

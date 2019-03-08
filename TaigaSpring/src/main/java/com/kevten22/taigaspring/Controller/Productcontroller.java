@@ -33,4 +33,6 @@ public class Productcontroller {
     public List<Product> getProductByProductName(@PathVariable String productname){
         return productrepos.findProductByProductnameEquals(productname);
     }
+
+
 }

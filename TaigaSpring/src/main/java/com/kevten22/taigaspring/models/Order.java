@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class Order {
     @JsonIgnoreProperties("orders")
     private User user;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "order")
     private Cart cart;
 
     private double orderTotal;

@@ -1,15 +1,14 @@
 package com.kevten22.taigaspring.Controller;
 
 
+import com.kevten22.taigaspring.models.Cart;
 import com.kevten22.taigaspring.models.Order;
 import com.kevten22.taigaspring.repository.Orderrepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,5 +28,10 @@ public class OrderController {
     public Optional<Order> getOrderByOrderId(@PathVariable long cartid)
     {
         return orderrepos.findById(cartid);
+    }
+
+    @PostMapping("")
+    public Order addNewOrder(@RequestBody Order neworder) throws URISyntaxException {
+        return orderrepos.save(neworder);
     }
 }

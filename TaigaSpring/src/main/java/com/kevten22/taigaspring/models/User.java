@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "shopper")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long shopperid;
+    private long userid;
     private String username;
 
     @JsonIgnore
@@ -39,11 +39,11 @@ public class User {
     }
 
     public long getShopperid() {
-        return shopperid;
+        return userid;
     }
 
     public void setShopperid(long shopperid) {
-        this.shopperid = shopperid;
+        this.userid = shopperid;
     }
 
     public String getUsername() {
