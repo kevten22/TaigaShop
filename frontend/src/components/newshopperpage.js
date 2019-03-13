@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class newshopperpage extends Component {
     constructor(props){
@@ -14,7 +15,7 @@ class newshopperpage extends Component {
     }
 
     registerNewUser(){
-        user = {
+        let user = {
             username: this.state.username,
             password: this.state.password,
             billingaddress: "123 w. Test Ln",
