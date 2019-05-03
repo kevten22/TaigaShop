@@ -1,4 +1,5 @@
 import Layout from '../components/MyLayout.js'
+import fetch from 'isomorphic-unfetch'
 
 
 const Index = () => (
@@ -8,8 +9,8 @@ const Index = () => (
   )
 
   Index.getInitialProps = async function() {
-    const res = await fetch('placeholderurl')
-    const data = await res.json()
+    //const res = await fetch('placeholderurl')
+    //const data = await res.json()
 
     return {
     }
